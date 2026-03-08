@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Water Monitor</title>
+  <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+  <span class="logo">💧 Water Monitor</span>
+  <nav>
+    <a href="{{ url_for('main.logout') }}">Sign out</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Controls -->
+  <section class="controls">
+    <form method="get" class="filter-form">
+      <label>From <input type="date" name="start" value="{{ start }}"></label>
+      <label>To   <input type="date" name="end"   value="{{ end }}"></label>
+      <label>Tail (min) <input type="number" name="tail" value="{{ tail }}" min="0" max="120" step="5" style="width:70px"></label>
+      <button type="submit">Apply</button>
+    </form>
+
+    <div class="refresh-controls">
+      <button id="refresh-btn" onclick="triggerRefresh()">Refresh Data</button>
+      <span id="refresh-status" class="refresh-msg">
+        {% if refresh_state.running %}Refresh in progress…{% elif refresh_state.message %}{{ refresh_state.message }}{% endif %}
+        {% if refresh_state.error %}<span class="error">{{ refresh_state.error }}</span>{% endif %}
+      </span>
+    </div>
+  </section>
+
+  <!-- Charts -->
+  <section class="charts">
+
+    <div class="chart-card full-width">
+      <div id="chart-monthly-aquahawk" class="plotly-chart"></div>
+    </div>
+
+    <div class="chart-card full-width">
+      <div id="chart-daily-usage" class="plotly-chart"></div>
+    </div>
+
+    <div class="chart-card full-width">
+      <div id="chart-alignment" class="plotly-chart"></div>
+    </div>
+
+    <div class="chart-card full-width">
+      <div id="chart-zone-over-time" class="plotly-chart"></div>
+    </div>
+
+    <div class="chart-card full-width">
+      <div id="chart-timeline" class="plotly-chart"></div>
+    </div>
+
+    <div class="chart-card half-width">
+      <div id="chart-zone-totals" class="plotly-chart"></div>
+    </div>
+
+    <div class="chart-card half-width">
+      <div id="chart-gpm" class="plotly-chart"></div>
+    </div>
+
+  </section>
+
+</main>
+
+<script>
+  const chartData = {
+    "chart-monthly-aquahawk": {{ charts.monthly_aquahawk | safe }},
+    "chart-daily-usage":      {{ charts.daily_usage      | safe }},
+    "chart-zone-over-time": {{ charts.zone_over_time | safe }},
+    "chart-alignment":      {{ charts.alignment      | safe }},
+    "chart-timeline":       {{ charts.timeline       | safe }},
+    "chart-zone-totals":    {{ charts.zone_totals    | safe }},
+    "chart-gpm":            {{ charts.gpm            | safe }},
+  };
+
+  const config = { responsive: true, displayModeBar: true, scrollZoom: true };
+
+  for (const [id, spec] of Object.entries(chartData)) {
+    Plotly.react(id, spec.data, spec.layout, config);
+  }
+
+  // ── Refresh polling ──────────────────────────────────────────────────────────
+  function triggerRefresh() {
+    const btn = document.getElementById("refresh-btn");
+    const status = document.getElementById("refresh-status");
+    btn.disabled = true;
+    status.textContent = "Starting refresh…";
+
+    fetch("{{ url_for('main.refresh') }}", { method: "POST" })
+      .then(r => r.json())
+      .then(data => {
+        if (data.status === "already_running") {
+          status.textContent = "Already running…";
+        }
+        pollRefresh();
+      })
+      .catch(err => {
+        status.textContent = "Error: " + err;
+        btn.disabled = false;
+      });
+  }
+
+  function pollRefresh() {
+    fetch("{{ url_for('main.refresh_status') }}")
+      .then(r => r.json())
+      .then(state => {
+        const status = document.getElementById("refresh-status");
+        const btn = document.getElementById("refresh-btn");
+        if (state.running) {
+          status.textContent = "Downloading data…";
+          setTimeout(pollRefresh, 3000);
+        } else {
+          status.textContent = state.message || "";
+          if (state.error) {
+            status.innerHTML += ' <span class="error">' + state.error + "</span>";
+          } else if (state.message) {
+            // Reload page to show fresh data
+            setTimeout(() => location.reload(), 1500);
+          }
+          btn.disabled = false;
+        }
+      });
+  }
+</script>
+
+</body>
+</html>
