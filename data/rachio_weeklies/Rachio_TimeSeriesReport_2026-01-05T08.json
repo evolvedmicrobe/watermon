@@ -1,0 +1,162 @@
+[
+    {
+        "id": "6a647d65-7b77-3e7f-b45d-119c6cd8a734",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1768144599000,
+        "summary": "Lawn Sprinklers was scheduled for 1/11 at 07:12 AM (PST), but will be skipped based on weather and soil conditions.",
+        "subType": "WEATHER_INTELLIGENCE_CLIMATE_SKIP",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "bcccfab2-a18a-3637-a41d-edd6e3d2fbbf",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1768132818000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "49a113b1-fb73-395d-b052-e211797f7888",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1768132818000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "ef540a6d-2467-34ff-aa97-0731316cf349",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1768046419000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "b7523056-16be-370f-b8ff-5b85c716da58",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1768046418000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "9a250dc1-f2bf-3d3c-9719-c5668df87f6e",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1768007211000,
+        "summary": "Front Yard was scheduled for 1/09 at 05:04 PM (PST), but will be skipped based on weather and soil conditions.",
+        "subType": "WEATHER_INTELLIGENCE_CLIMATE_SKIP",
+        "hidden": false,
+        "scheduleId": "143ee9ea-88f8-48dd-b134-e9fae4e9005b",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "084d854c-4893-38aa-b0d5-bcbd83e5f9a5",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1767971806000,
+        "summary": "Lawn Sprinklers was scheduled for 1/09 at 07:13 AM (PST), but will be skipped based on weather and soil conditions.",
+        "subType": "WEATHER_INTELLIGENCE_CLIMATE_SKIP",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "db90be6e-efe5-30e8-b369-87a63afc31c3",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767960021000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "32016b6a-b55a-3afe-8862-723fe91dc882",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767960021000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "f4bfba70-f033-33a4-acef-f1d466c4fea1",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767873621000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "f9ea4153-a93f-30cf-891b-0b41658f5685",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767873620000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "0ffb8616-832d-3f21-a541-50595e9395b7",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767787221000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "61e02be8-26a5-3679-a683-208b0e0eecac",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767787221000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "90372694-69d5-3b6b-8fda-3a226c980fa4",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1767712597000,
+        "summary": "Lawn Sprinklers was scheduled for 1/06 at 07:13 AM (PST), but was skipped due to PLUS weather network which observed 0.78 in precipitation compared to schedules's threshold of 0.13 in.",
+        "subType": "WEATHER_INTELLIGENCE_SKIP",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "c444cee6-343f-3221-936c-bfa06c0017ee",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767700818000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "886ffbab-657c-33fb-bb28-93e6f9884d43",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767700818000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "079f46e3-136b-34cf-81f8-37368034d8c1",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767614418000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "95c42907-70c8-371e-bac8-021012e67ddc",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767614417000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    }
+]

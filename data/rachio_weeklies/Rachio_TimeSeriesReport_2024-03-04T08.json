@@ -1,0 +1,128 @@
+[
+    {
+        "id": "2896a0d2-0455-3ee3-99b2-558be4f1a2c2",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1709861442000,
+        "summary": "Quick Run will run for 3 minutes.",
+        "subType": "SCHEDULE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "b1161572-bcfe-3961-83ed-1ad146407225",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1709861444000,
+        "summary": "Backyard Orchard began watering at 05:30 PM (PST).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "e29b6f88-6c60-378a-b486-123f657beb77",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1709861479000,
+        "summary": "Backyard Orchard stopped watering at 05:31 PM (PST) for 36 seconds.",
+        "subType": "ZONE_STOPPED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "74a56486-19be-3819-a409-241dd1e67a80",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1709861480000,
+        "summary": "Quick Run was manually stopped after 36 seconds.",
+        "subType": "SCHEDULE_STOPPED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "e171f99e-f5e1-3391-bf1b-cd6aa5aae9aa",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1709861869000,
+        "summary": "Quick Run will run for 6 minutes.",
+        "subType": "SCHEDULE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "30590ada-7c78-3653-9b41-6864a2841fe6",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1709861871000,
+        "summary": "Backyard Orchard began watering at 05:37 PM (PST).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "56dd22c1-7243-352c-b898-957efad72904",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1709862230000,
+        "summary": "Backyard Orchard completed watering at 05:43 PM (PST) for 6 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "adf11f1c-34d8-3693-8239-3b0c43448570",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1709862231000,
+        "summary": "Quick Run ran for 6 minutes.",
+        "subType": "SCHEDULE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "a231cdd2-407a-3642-add3-1d9923c0e621",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1709864021000,
+        "summary": "Backyard Orchard began watering at 06:13 PM (PST).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "9a790b25-e51a-3883-8eff-236e791f7534",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1709864021000,
+        "summary": "Quick Run will run for 3 minutes.",
+        "subType": "SCHEDULE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "eb1fc6e6-e583-3707-bfb9-53dfc52eda71",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1709864200000,
+        "summary": "Backyard Orchard completed watering at 06:16 PM (PST) for 3 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "0c5f921d-f610-3f49-8d02-baee9675aaa4",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1709864201000,
+        "summary": "Quick Run ran for 3 minutes.",
+        "subType": "SCHEDULE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    }
+]

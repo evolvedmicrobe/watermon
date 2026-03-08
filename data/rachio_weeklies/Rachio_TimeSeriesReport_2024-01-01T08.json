@@ -1,0 +1,155 @@
+[
+    {
+        "id": "d24c0977-76d1-36cf-9232-c38c757f3275",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1704150614000,
+        "summary": "The season is changing - Flex Monthly has you covered! Your schedule, Orchard adjusted for the changing weather.",
+        "subType": "SCHEDULE_RULE_SKIP_ADDED",
+        "hidden": false,
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "1ca7275c-834d-3e50-8ff7-25040279e95f",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1704150614000,
+        "summary": "The season is changing - Flex Monthly has you covered! Your schedule, Front Yard adjusted for the changing weather.",
+        "subType": "SCHEDULE_RULE_SKIP_ADDED",
+        "hidden": false,
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "5a7749ee-bef2-331e-ba03-33d2edf615bf",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1704150614000,
+        "summary": "The season is changing - Seasonal Shift has you covered! Your schedule, Lawn Sprinklers adjusted for the changing weather.",
+        "subType": "SCHEDULE_RULE_SKIP_ADDED",
+        "hidden": false,
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "0f8651e9-067a-3fad-9141-0e3bf1e3a497",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1704150614000,
+        "summary": "The season is changing - Flex Monthly has you covered! Your schedule, Bubblers adjusted for the changing weather.",
+        "subType": "SCHEDULE_RULE_SKIP_ADDED",
+        "hidden": false,
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "05c6ccdf-6eec-3a34-aecd-cff35d3fd95e",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1704208873000,
+        "summary": "Lawn Sprinklers was scheduled for 1/02 at 07:16 AM (PST), but was skipped due to PLUS weather network which predicted 0.43 in precipitation compared to schedules's threshold of 0.13 in.",
+        "subType": "WEATHER_INTELLIGENCE_SKIP",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "2b46ab75-489c-378d-a5ab-56c80be3c352",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1704330118000,
+        "summary": "Bubblers was scheduled for 1/03 at 04:58 PM (PST), but will be skipped based on weather and soil conditions.",
+        "subType": "WEATHER_INTELLIGENCE_CLIMATE_SKIP",
+        "hidden": false,
+        "scheduleId": "e5d592d2-06a3-4c10-9e9c-11a656e12650",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "38a9a30b-92d4-3413-8039-9415b4eb00ef",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1704468074000,
+        "summary": "Lawn Sprinklers was scheduled for 1/05 at 07:16 AM (PST), but will be skipped based on weather and soil conditions.",
+        "subType": "WEATHER_INTELLIGENCE_CLIMATE_SKIP",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "252d0c7c-e715-3199-9b7c-01529b73d010",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1704675720000,
+        "summary": "Front Yard will run for 116 minutes.",
+        "subType": "SCHEDULE_STARTED",
+        "hidden": false,
+        "scheduleId": "143ee9ea-88f8-48dd-b134-e9fae4e9005b",
+        "topic": "WATERING"
+    },
+    {
+        "id": "1c7e25aa-c4c9-3ac7-8768-e1594e4b4a0e",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1704675722000,
+        "summary": "Front Yard began watering at 05:02 PM (PST).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "4f25ad67-c16d-3f5c-af54-931228232b28",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1704675961000,
+        "summary": "Front Yard was not skipped because the PLUS weather network observed:\n0.00 in of predicted and 0.04 in observed precipitation\n7 mph winds\n43\u00b0F temp",
+        "hidden": false,
+        "scheduleId": "143ee9ea-88f8-48dd-b134-e9fae4e9005b"
+    },
+    {
+        "id": "0e512b93-3836-3175-9cf3-55127e9cb4e0",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1704679530000,
+        "summary": "Front Yard Tree began watering at 06:05 PM (PST).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "1b21a4e9-9949-35cc-b6a8-4b00ab8ab070",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1704679540000,
+        "summary": "Front Yard completed watering at 06:05 PM (PST) for 64 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "ab4b2653-4126-3c45-85fe-c84463cdab3f",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1704682699000,
+        "summary": "Front Yard Tree completed watering at 06:58 PM (PST) for 53 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "11e95413-66ce-3d92-ba3e-ddfd6e755d96",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1704682699000,
+        "summary": "Front Yard ran for 116 minutes.",
+        "subType": "SCHEDULE_COMPLETED",
+        "hidden": false,
+        "scheduleId": "143ee9ea-88f8-48dd-b134-e9fae4e9005b",
+        "topic": "WATERING"
+    }
+]

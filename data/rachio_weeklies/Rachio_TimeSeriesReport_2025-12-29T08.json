@@ -1,0 +1,206 @@
+[
+    {
+        "id": "b27e962c-1b18-3bb5-b89a-5523994d8b85",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1767539799000,
+        "summary": "Lawn Sprinklers was scheduled for 1/04 at 07:13 AM (PST), but was skipped due to PLUS weather network which observed 0.71 in and predicted 1.19 in precipitation compared to schedules's threshold of 0.13 in.",
+        "subType": "WEATHER_INTELLIGENCE_SKIP",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "b0f17618-3d2a-3406-aeea-af475d8633b0",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767528017000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "d2843b1d-6993-38db-99ac-321e417f42f3",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767528016000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "033040c7-1ca9-31ca-807f-def3cabef320",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767441617000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "84b4e645-70d1-397c-bac6-c1370e71d2d8",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767441617000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "e1d88630-5a99-3db7-8035-62a0762edc4f",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1767402070000,
+        "summary": "Bubblers was scheduled for 1/02 at 04:58 PM (PST), but was skipped due to PLUS weather network which observed 0.74 in precipitation compared to schedules's threshold of 0.13 in.",
+        "subType": "WEATHER_INTELLIGENCE_SKIP",
+        "hidden": false,
+        "scheduleId": "e5d592d2-06a3-4c10-9e9c-11a656e12650",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "7224358d-bf3b-3312-a593-019e437fda35",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1767366963000,
+        "summary": "Lawn Sprinklers was scheduled for 1/02 at 07:13 AM (PST), but was skipped due to PLUS weather network which observed 0.74 in precipitation compared to schedules's threshold of 0.13 in.",
+        "subType": "WEATHER_INTELLIGENCE_SKIP",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "32aacd1c-5add-32b9-a67c-b497d3f76fb4",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767355220000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "1d4b7e4c-7116-3b8f-9869-28bb506c5231",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767355220000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "81908227-3fb7-3fe5-87a8-7a2793bcedb7",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1767289820000,
+        "summary": "The season is changing - Flex Monthly has you covered! Orchard will continue to run every 21 days in January.",
+        "subType": "SCHEDULE_RULE_SKIP_ADDED",
+        "hidden": false,
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "38895039-7234-348a-9340-8f37bddb3b21",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1767289820000,
+        "summary": "The season is changing - Seasonal Shift has you covered! Lawn Sprinklers ran for 13 minutes in December and will run 11 minutes in January.",
+        "subType": "SCHEDULE_RULE_SKIP_ADDED",
+        "hidden": false,
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "d816299f-ce09-38a4-b1bd-d9ab02f53ef7",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1767289820000,
+        "summary": "The season is changing - Flex Monthly has you covered! Bubblers ran every 16 days in December and will run every 18 days in January.",
+        "subType": "SCHEDULE_RULE_SKIP_ADDED",
+        "hidden": false,
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "83f19fae-0ecd-3954-9bc0-e851cfdd9e6c",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1767289820000,
+        "summary": "The season is changing - Flex Monthly has you covered! Front Yard will continue to run every 21 days in January.",
+        "subType": "SCHEDULE_RULE_SKIP_ADDED",
+        "hidden": false,
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "8566ee7c-e4a7-3565-ab3d-d43037f18413",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767268817000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "1a55f2d0-5eae-3260-83bf-b1bfcc2e78a7",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767268817000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "226c551b-0359-33b7-80da-2143a8bcc4ad",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767182420000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "175f5761-e437-3f89-9c6b-1f01db7f292e",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767182420000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "9c58549c-53ea-3850-9f0b-373e5b4c6eb6",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1767107486000,
+        "summary": "Lawn Sprinklers was scheduled for 12/30 at 07:10 AM (PST), but will be skipped based on weather and soil conditions.",
+        "subType": "WEATHER_INTELLIGENCE_CLIMATE_SKIP",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "ea7be177-37a7-3954-83bb-433e2e793107",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767096018000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "391f9178-e274-32d0-95a1-a9348a9b85d7",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767096018000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "14f4d467-c5d6-38c9-be4d-059c5e541cae",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767009619000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    },
+    {
+        "id": "f574726f-3c8e-3767-b46c-5f2633fdef10",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1767009619000,
+        "summary": "Weather adjustment modified due to changes in the forecast.",
+        "hidden": false
+    }
+]

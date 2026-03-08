@@ -1,0 +1,46 @@
+[
+    {
+        "id": "27263ea9-e846-3c28-a9cd-6582849786a6",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1706840197000,
+        "summary": "The season is changing - Seasonal Shift has you covered! Your schedule, Lawn Sprinklers adjusted for the changing weather.",
+        "subType": "SCHEDULE_RULE_SKIP_ADDED",
+        "hidden": false,
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "95215b58-178f-3c72-8a4b-ef397ed8c4e2",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1706840197000,
+        "summary": "The season is changing - Flex Monthly has you covered! Your schedule, Orchard adjusted for the changing weather.",
+        "subType": "SCHEDULE_RULE_SKIP_ADDED",
+        "hidden": false,
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "aca9567e-8bf6-3226-b4f2-4a0e1412a944",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1706840197000,
+        "summary": "The season is changing - Flex Monthly has you covered! Your schedule, Bubblers adjusted for the changing weather.",
+        "subType": "SCHEDULE_RULE_SKIP_ADDED",
+        "hidden": false,
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "b776b7de-50d0-3908-8259-c0082ca02f6b",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1706840197000,
+        "summary": "The season is changing - Flex Monthly has you covered! Your schedule, Front Yard adjusted for the changing weather.",
+        "subType": "SCHEDULE_RULE_SKIP_ADDED",
+        "hidden": false,
+        "topic": "SCHEDULE"
+    }
+]

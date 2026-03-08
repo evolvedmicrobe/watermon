@@ -27,7 +27,7 @@ matcher.match(text)
 
 class EventData:
     def __init__(self, data) -> None:
-        if "type" not in data and not offline_regex.match(data.get("summary", "")):
+        if "type" not in data and not offline_regex.search(data.get("summary", "")):
             print(data)
             raise Exception(data)
         self.data = data
@@ -62,7 +62,7 @@ class EventData:
         if self.data.get("subType") is None:
             # If we watered offline, promote to a full time,
             # time zones might be off here.
-            if offline_regex.match(self.summary):
+            if offline_regex.search(self.summary):
                 self.subType = "ZONE_STOPPED"
                 self.topic = "WATERING"
 
@@ -84,18 +84,17 @@ def parse_datetime_intervals(zone: str, zone_data: list[EventData]):
     minutes_watering = []
     date = []
 
-    # Iterate through datetime intervals
-    for i in range(0, len(zone_data), 2):
+    # Iterate through datetime intervals, skipping any unpaired events
+    i = 0
+    while i < len(zone_data) - 1:
         start = zone_data[i]
         end = zone_data[i + 1]
-        assert (
-            start.subType == "ZONE_STARTED"
-        ), f"{start} - {end} {start.subType} starter"
-        msg = "\n".join([str(x) for x in zone_data[i - 2 : i + 2]])
-        print(f"Failures! {msg}")
-        assert (
-            end.subType == "ZONE_STOPPED" or end.subType == "ZONE_COMPLETED"
-        ), f"{start} - {end} {end.subType} stopper"
+        if start.subType != "ZONE_STARTED" or end.subType not in (
+            "ZONE_STOPPED",
+            "ZONE_COMPLETED",
+        ):
+            i += 1
+            continue
 
         # Loop through each hour in the interval
         current = start.pacific_date_time
@@ -113,6 +112,7 @@ def parse_datetime_intervals(zone: str, zone_data: list[EventData]):
             minutes_watering.append(minutes_spent)
             date.append(current)
             current = interval_end
+        i += 2
     return pd.DataFrame(
         {
             "Year": year,

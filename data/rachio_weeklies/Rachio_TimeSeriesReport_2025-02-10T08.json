@@ -1,0 +1,26 @@
+[
+    {
+        "id": "ef8c98b5-6ac7-3e27-80ad-56326d165f11",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1739284603000,
+        "summary": "Lawn Sprinklers was scheduled for 2/11 at 06:33 AM (PST), but will be skipped based on weather and soil conditions.",
+        "subType": "WEATHER_INTELLIGENCE_CLIMATE_SKIP",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "47e6f49f-b20c-3179-92d7-8e8451fb8f02",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1739543506000,
+        "summary": "Lawn Sprinklers was scheduled for 2/14 at 06:29 AM (PST), but was skipped due to PLUS weather network which observed 1.56 in precipitation compared to schedules's threshold of 0.13 in.",
+        "subType": "WEATHER_INTELLIGENCE_SKIP",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "SCHEDULE"
+    }
+]

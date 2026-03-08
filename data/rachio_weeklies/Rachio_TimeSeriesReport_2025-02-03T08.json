@@ -1,0 +1,38 @@
+[
+    {
+        "id": "9421ee8a-ef3f-39b0-b567-12d9154e9e71",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1738680100000,
+        "summary": "Lawn Sprinklers was scheduled for 2/04 at 06:40 AM (PST), but was skipped due to PLUS weather network which observed 2.26 in precipitation compared to schedules's threshold of 0.13 in.",
+        "subType": "WEATHER_INTELLIGENCE_SKIP",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "50fbeef9-8e33-33db-8edd-1b0ab3df3532",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1738939318000,
+        "summary": "Lawn Sprinklers was scheduled for 2/07 at 06:37 AM (PST), but was skipped due to PLUS weather network which observed 0.64 in precipitation compared to schedules's threshold of 0.13 in.",
+        "subType": "WEATHER_INTELLIGENCE_SKIP",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "SCHEDULE"
+    },
+    {
+        "id": "7c93b280-e034-3dc7-8fdd-affbe3e27b72",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "WEATHER_INTELLIGENCE",
+        "eventDate": 1739065329000,
+        "summary": "Bubblers was scheduled for 2/08 at 05:37 PM (PST), but will be skipped based on weather and soil conditions.",
+        "subType": "WEATHER_INTELLIGENCE_CLIMATE_SKIP",
+        "hidden": false,
+        "scheduleId": "e5d592d2-06a3-4c10-9e9c-11a656e12650",
+        "topic": "SCHEDULE"
+    }
+]
