@@ -30,7 +30,7 @@ No build step or test suite exists yet.
 
 ## GoDaddy cPanel Deployment
 
-1. In cPanel → **Setup Python App**, create a Python 3.x app pointed at the repo root.
+1. In cPanel → **Setup Python App**, create a Python 3.11+ app pointed at the repo root.
 2. Set the **Application startup file** to `passenger_wsgi.py` and **Application entry point** to `application`.
 3. Install dependencies via the cPanel Python app's pip (or SSH: `pip install -r requirements.txt`).
 4. Copy `credentials.json` to the repo root on the server.

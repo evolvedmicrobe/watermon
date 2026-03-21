@@ -1,3 +1,3 @@
 #!/bin/bash
 conda init
-conda activate webdev
+conda activate py311

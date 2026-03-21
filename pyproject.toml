@@ -1,2 +1,3 @@
 [project]
 name = "watermon"
+requires-python = ">=3.11"

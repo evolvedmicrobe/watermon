@@ -67,19 +67,9 @@ def enumerate_weekly_times(start_date_str="2022-01-01") -> list[dict[str, str]]:
 
 
 def convert_iso_to_epoch_millis(iso_str):
-    # Remove the 'Z' timezone indicator since fromisoformat does not support it
-    iso_str = iso_str.replace("Z", "+00:00")
-
-    # Parse the ISO 8601 string into a datetime object, considering it as UTC
+    # Python 3.11+ fromisoformat supports the 'Z' UTC suffix natively
     date = datetime.fromisoformat(iso_str)
-
-    # Convert the datetime object to Unix timestamp in seconds,
-    # ensuring it's aware of its timezone (UTC in this case)
-    timestamp_seconds = date.replace(tzinfo=timezone.utc).timestamp()
-
-    # Convert seconds to milliseconds
-    timestamp_millis = int(timestamp_seconds * 1000)
-
+    timestamp_millis = int(date.timestamp() * 1000)
     return timestamp_millis
 
 

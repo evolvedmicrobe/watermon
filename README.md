@@ -16,7 +16,7 @@ A personal water monitoring dashboard that pulls data from an **AquaHawk** utili
 
 ## Requirements
 
-- Python 3.9+
+- Python 3.11+
 - AquaHawk account credentials
 - Rachio API key
 - A `credentials.json` file at the repo root (see below — this file is gitignored)
@@ -57,7 +57,7 @@ Then open `http://localhost:5000`, enter the password from `config.py`, and use 
 ## Deploying to GoDaddy cPanel
 
 1. Upload the repo to your cPanel hosting account.
-2. In cPanel → **Setup Python App**, create a Python 3.x app pointed at the repo root.
+2. In cPanel → **Setup Python App**, create a Python 3.11+ app pointed at the repo root.
 3. Set **Application startup file** to `passenger_wsgi.py` and **Application entry point** to `application`.
 4. Install dependencies via cPanel's pip or SSH: `pip install -r requirements.txt`.
 5. Place `credentials.json` in the repo root on the server.

@@ -13,17 +13,16 @@ import os
 import re
 import time
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 import pandas as pd
-import pytz
 import requests
 
 import common
 from config import AQUAHAWK_START_DATE, LOCAL_TIMEZONE, RACHIO_START_DATE
 
-LOCAL_TZ = pytz.timezone(LOCAL_TIMEZONE)
-UTC_TZ = pytz.utc
+LOCAL_TZ = ZoneInfo(LOCAL_TIMEZONE)
 
 AQUAHAWK_URL = "https://aquahawk.us"
 _ZONE_RE = re.compile(r"(\w*\s*\w*\s*\w+)\s+(?:completed|began|stopped)")
@@ -168,7 +167,7 @@ def load_aquahawk_df(start_date=None, end_date=None) -> pd.DataFrame:
 
 
 def _epoch_ms_to_pacific(ms: int) -> datetime:
-    return datetime.utcfromtimestamp(ms / 1000).replace(tzinfo=UTC_TZ).astimezone(LOCAL_TZ)
+    return datetime.fromtimestamp(ms / 1000, tz=timezone.utc).astimezone(LOCAL_TZ)
 
 
 def _parse_zone(summary: str) -> str:
