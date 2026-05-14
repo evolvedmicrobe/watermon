@@ -171,45 +171,55 @@ def get_davis_device_id(rachio: Rachio):
     raise Exception("Failed to find ID")
 
 
-def download_data():
+def download_data(start_date_str: str = "2023-07-09") -> int:
+    """Download missing weekly Rachio event JSONs.
+
+    Returns the number of newly downloaded weekly files.
+    """
+    os.makedirs(RACHIO_DATA_DIRECTORY, exist_ok=True)
     rachio, did = None, None
-    _, _, rachio = common.get_creds()
-    davis_api_key = rachio["api_key"]
-    # The device was activated/installed on this day
-    start_time = "2023-07-09"
-    weeks = common.enumerate_weekly_times(start_date_str=start_time)
+    _, _, rachio_creds = common.get_creds()
+    davis_api_key = rachio_creds["api_key"]
+    weeks = common.enumerate_weekly_times(start_date_str=start_date_str)
+    downloaded_count = 0
     for interval in weeks:
         start = interval["start_time"]
         end = interval["end_time"]
         file_name = get_rachio_filename(start)
         if os.path.exists(file_name):
             print(f"File: {file_name} already exists, not performing query")
-        else:
-            if rachio is None or did is None:
-                rachio = Rachio(davis_api_key)
-                did = get_davis_device_id(rachio)
-            st = common.convert_iso_to_epoch_millis(start)
-            et = common.convert_iso_to_epoch_millis(end)
-            events = rachio.device.event(did, st, et)
-            if (len(events) < 2) | (events[0]["status"] != 200):
-                raise IOError(f"Failed to gather data for starttime {st}")
-            with open(file_name, "w") as of:
-                of.write(json.dumps(events[1], indent=4))
-                of.close()
-            print(f"Downloaded {file_name}")
+            continue
+        if rachio is None or did is None:
+            rachio = Rachio(davis_api_key)
+            did = get_davis_device_id(rachio)
+        st = common.convert_iso_to_epoch_millis(start)
+        et = common.convert_iso_to_epoch_millis(end)
+        events = rachio.device.event(did, st, et)
+        if (len(events) < 2) | (events[0]["status"] != 200):
+            raise IOError(f"Failed to gather data for starttime {st}")
+        with open(file_name, "w") as of:
+            of.write(json.dumps(events[1], indent=4))
+        print(f"Downloaded {file_name}")
+        downloaded_count += 1
+    return downloaded_count
 
 
-def combine_data():
-    files = glob.glob(RACHIO_DATA_DIRECTORY + "/**.json")
-    files.sort()
-    data = []
+def parse_rachio_events() -> dict[str, list[EventData]]:
+    """Load every cached Rachio JSON and group parsed events by zone.
+
+    Expands "watered while offline" events into synthetic STARTED/STOPPED pairs,
+    filters out ZONE_CYCLING_* sub-events, and sorts chronologically within
+    each zone. The returned dict is what `combine_data` and downstream callers
+    use to build interval / hourly DataFrames.
+    """
+    files = sorted(glob.glob(RACHIO_DATA_DIRECTORY + "/**.json"))
+    raw = []
     for file_name in files:
-        cur_file = json.loads(open(file_name, "r").read())
-        # aprint(cur_file)
-        data += cur_file
+        with open(file_name, "r") as fh:
+            raw += json.loads(fh.read())
 
     expanded = []
-    for x in data:
+    for x in raw:
         expanded.extend(_expand_offline_event(x))
 
     cdata = [
@@ -219,27 +229,25 @@ def combine_data():
         and not (x.get("subType") or "").startswith("ZONE_CYCLING")
     ]
     cdata.sort(key=lambda x: x.eventDate)
-    # for x in cdata:
-    #     print(x.date_string)
-    # Now let's get the start and end times for each zone
+
     dd = defaultdict(list)
-    for data in cdata:
-        dd[data.zone].append(data)
-    # for k, v in dd.items():
-    #    print(f"K = {k} VAL = {dd[k][:10]}")
-    dfs = []
-    for zone, events in dd.items():
-        dfs.append(parse_datetime_intervals(zone, events))
+    for ev in cdata:
+        dd[ev.zone].append(ev)
+    return dd
+
+
+def combine_data():
+    dd = parse_rachio_events()
+    dfs = [parse_datetime_intervals(zone, events) for zone, events in dd.items()]
     return pd.concat(dfs), dd
 
 
 def load_rachio_data():
     download_data()
-    data, cd = combine_data()
-    # print(cd["UNKNOWN"])
-    # print(cd.keys())
-    data.to_csv("rachio.csv", index=False)
+    data, _ = combine_data()
     return data
 
 
-load_rachio_data()
+if __name__ == "__main__":
+    data = load_rachio_data()
+    data.to_csv("rachio.csv", index=False)

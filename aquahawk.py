@@ -72,27 +72,31 @@ def get_weeks_data(
         return True
 
 
-def download_aquahawk_data():
+def download_aquahawk_data(start_date_str: str = "2022-01-01") -> int:
     """Top level method to login to the aquahawk site and download data.
 
-    Grabs hourly data a week at a time to accomodate API restrictions.  Logins with credentials stored in credentials.json
+    Grabs hourly data a week at a time to accomodate API restrictions.  Logins with credentials stored in credentials.json.
+    Returns the number of newly downloaded weekly files.
     """
+    os.makedirs(AQUAHAWK_DATA_DIRECTORY, exist_ok=True)
     url = f"{AQUAHAWK_URL}/login"
     login, account, _ = get_creds()
     # Use requests here as it caches the cookies the best, `httplib2` was just not working when
     # I tried to manually fuzz with the cookies.
-    intervals = enumerate_weekly_times()
-    print(f"Genereate Intervals of length {len(intervals)}")
+    intervals = enumerate_weekly_times(start_date_str)
+    print(f"Generated intervals of length {len(intervals)}")
+    downloaded_count = 0
     with requests.session() as context:
         result = context.post(url, data=login)
         print(f"Result of login was {result}, and that is {result.ok}")
         if not result.ok:
             result.raise_for_status()
         for interval in intervals:
-            downloaded = get_weeks_data(context, interval, account)
-            if downloaded:
+            if get_weeks_data(context, interval, account):
+                downloaded_count += 1
                 # Avoid hitting the server too hard.
                 time.sleep(1)
+    return downloaded_count
 
 
 def output_csv(response: requests.Response, outfilename: str):
@@ -102,19 +106,29 @@ def output_csv(response: requests.Response, outfilename: str):
         ofh.close()
 
 
-def load_aquahawk_data():
-    download_aquahawk_data()
-    files = [
+def read_aquahawk_csvs() -> pd.DataFrame:
+    """Concatenate all cached AquaHawk weekly CSVs into a single raw DataFrame.
+
+    No timezone handling, no download. Returns an empty DataFrame if the
+    cache directory is missing or contains no CSVs.
+    """
+    if not os.path.isdir(AQUAHAWK_DATA_DIRECTORY):
+        return pd.DataFrame()
+    files = sorted(
         os.path.join(AQUAHAWK_DATA_DIRECTORY, x)
         for x in os.listdir(AQUAHAWK_DATA_DIRECTORY)
         if x.endswith(".csv")
-    ]
-    files.sort()
-    data = [pd.read_csv(f) for f in files]
-    df = pd.concat(data, ignore_index=True)
-    df.to_csv("/Users/nigel/git/watermon/aq.csv")
-
-    return df
+    )
+    if not files:
+        return pd.DataFrame()
+    return pd.concat([pd.read_csv(f) for f in files], ignore_index=True)
 
 
-load_aquahawk_data()
+def load_aquahawk_data():
+    download_aquahawk_data()
+    return read_aquahawk_csvs()
+
+
+if __name__ == "__main__":
+    df = load_aquahawk_data()
+    df.to_csv("aq.csv")
