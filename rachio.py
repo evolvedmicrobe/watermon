@@ -11,14 +11,13 @@ from rachiopy import Rachio
 
 import common
 
-
 RACHIO_DATA_DIRECTORY = common.get_data_directory("rachio")
 ZONE_STARTED = "ZONE_STARTED"
 ZONE_COMPLETED = "ZONE_COMPLETED"
 WATERING_TOPIC = "WATERING"
 
 text = "Backyard Middle West began watering at 12:44 PM (PDT). - 2023-07-09 12:44:16 PDT-0700"
-zone_regex = "(\w*\s*\w*\s*\w+)\s+(?:completed|began|stopped)"
+zone_regex = "(\w*\s*\w*\s*\w+)\s+(?:completed|began|stopped|watered)"
 offline_regex_pattern = "watered for (\d+) minutes while offline"
 offline_regex = re.compile(offline_regex_pattern)
 matcher = re.compile(zone_regex)
@@ -35,8 +34,6 @@ class EventData:
         self.eventDate = data["eventDate"]
         self.summary = data["summary"]
         self.subType = data.get("subType")
-        # Hack for
-        self._parse_possible_offline_event()
         self.topic = data.get("topic", "WATERING")
         # Convert to human readable datetime
         # Your timestamp in milliseconds
@@ -52,25 +49,50 @@ class EventData:
         # Format the datetime object to a string
         self.date_string = dt_pacific.strftime("%Y-%m-%d %H:%M:%S %Z%z")
 
+        # Rachio has started truncating some strings, stupid because the three periods take up more room
+        self.summary = self.summary.replace(
+            "Backyard Middle We...", "Backyard Middle West"
+        )
+        self.summary = self.summary.replace(
+            "Backyard South Wes...", "Backyard South West"
+        )
         match = matcher.match(self.summary)
         if match:
             self.zone = match.group(1)
         else:
-            self.zone = "UNKNOWN"
-
-    def _parse_possible_offline_event(self):
-        if self.data.get("subType") is None:
-            # If we watered offline, promote to a full time,
-            # time zones might be off here.
-            if offline_regex.search(self.summary):
-                self.subType = "ZONE_STOPPED"
-                self.topic = "WATERING"
+            quick_run = "Quick Run"
+            if self.summary.startswith(quick_run):
+                self.zone = quick_run
+            else:
+                print(f"Unparseable zone: {self.summary}")
+                print(self.eventDate)
+                self.zone = "UNKNOWN"
 
     def __str__(self) -> str:
         return f"{self.summary} - {self.date_string} - {self.data}"
 
     def __repr__(self) -> str:
         return self.__str__()
+
+
+def _expand_offline_event(ev):
+    """Expand a "watered for X minutes while offline" event into a synthetic
+    (ZONE_STARTED, ZONE_STOPPED) pair so it can be paired up by
+    parse_datetime_intervals. The reported eventDate is when the controller
+    surfaced the event after reconnecting, so we treat it as the end and
+    estimate start as end - X minutes — wall-clock timing is approximate.
+    """
+    if ev.get("subType") is not None:
+        return [ev]
+    match = offline_regex.search(ev.get("summary") or "")
+    if not match:
+        return [ev]
+    minutes = int(match.group(1))
+    end_ms = ev["eventDate"]
+    start_ms = end_ms - minutes * 60 * 1000
+    start_ev = dict(ev, type="ZONE_STATUS", subType="ZONE_STARTED", eventDate=start_ms)
+    stop_ev = dict(ev, type="ZONE_STATUS", subType="ZONE_STOPPED")
+    return [start_ev, stop_ev]
 
 
 def parse_datetime_intervals(zone: str, zone_data: list[EventData]):
@@ -139,7 +161,7 @@ def get_davis_device_id(rachio: Rachio):
         raise IOError("Failed todo initial query with API token")
     pid = pi[1]["id"]
     data = rachio.person.get(pid)
-    print(data)
+    # print(data)
     if (len(data) < 2) | (data[0]["status"] != 200):
         raise IOError("Failed to query device information")
     for device in data[1]["devices"]:
@@ -186,16 +208,15 @@ def combine_data():
         # aprint(cur_file)
         data += cur_file
 
+    expanded = []
+    for x in data:
+        expanded.extend(_expand_offline_event(x))
+
     cdata = [
         EventData(x)
-        for x in data
+        for x in expanded
         if x.get("type") == "ZONE_STATUS"
-        or "while offline" in x.get("summary")
-        and (
-            not x.get("subType") is None
-            and x.get("subType").startswith("ZONE_CYCLING")
-            or x.get("subType") is None
-        )
+        and not (x.get("subType") or "").startswith("ZONE_CYCLING")
     ]
     cdata.sort(key=lambda x: x.eventDate)
     # for x in cdata:
@@ -204,8 +225,8 @@ def combine_data():
     dd = defaultdict(list)
     for data in cdata:
         dd[data.zone].append(data)
-    for k, v in dd.items():
-        print(f"K = {k} VAL = {dd[k][:10]}")
+    # for k, v in dd.items():
+    #    print(f"K = {k} VAL = {dd[k][:10]}")
     dfs = []
     for zone, events in dd.items():
         dfs.append(parse_datetime_intervals(zone, events))
