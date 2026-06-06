@@ -23,7 +23,7 @@ def _wsgi(environ, start_response):
     """Outermost shim. Hitting any URL containing 'wmdebug' returns the RAW
     WSGI environ (as Passenger handed it to us, before ProxyFix) so we can see
     how SCRIPT_NAME / PATH_INFO are being mapped. Remove once diagnosed."""
-    if "wmdebug" in environ.get("REQUEST_URI", ""):
+    if "wmdebug" in environ.get("REQUEST_URI", "") or "wmdebug" in environ.get("QUERY_STRING", ""):
         import json
 
         keys = [
@@ -31,6 +31,7 @@ def _wsgi(environ, start_response):
             "SERVER_NAME", "HTTP_HOST", "wsgi.url_scheme",
         ]
         info = {k: environ.get(k) for k in keys}
+        info["_all_environ"] = {k: str(v) for k, v in environ.items()}
         info["_passenger_keys"] = {
             k: v for k, v in environ.items() if k.startswith("PASSENGER")
         }
