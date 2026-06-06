@@ -1,0 +1,873 @@
+[
+    {
+        "id": "d0197cec-8dda-3c13-9f10-327b45533a69",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779626941000,
+        "summary": "Lawn Sprinklers ran for 71 minutes.",
+        "subType": "SCHEDULE_COMPLETED",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "WATERING"
+    },
+    {
+        "id": "412d4573-d033-3943-b0c0-55b917a76e9d",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779626941000,
+        "summary": "Backyard East Lawn completed watering at 05:49 AM (PDT) for 11 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "989e227e-54c4-3046-b8d0-ca87ae171bed",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779626291000,
+        "summary": "Backyard South Wes... completed watering at 05:38 AM (PDT) for 6 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "67ff6a65-99b3-3252-aa33-089a614ccca1",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779626281000,
+        "summary": "Backyard East Lawn began watering at 05:38 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "d3565173-4df6-3995-a31e-db2ab70124c4",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779625936000,
+        "summary": "Backyard Middle We... completed watering at 05:32 AM (PDT) for 6 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "f4d9a9c1-449f-37f4-89b8-0ed3354857bf",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779625926000,
+        "summary": "Backyard South Wes... began watering at 05:32 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "8d5ee4bd-feb4-3b2c-bf80-ddd62c0d6409",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779625564000,
+        "summary": "Backyard Northwest completed watering at 05:26 AM (PDT) for 7 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "47b431a1-f871-37dd-b9ca-e2e3ad9be73d",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779625554000,
+        "summary": "Backyard Middle We... began watering at 05:25 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "c36a8962-926c-324a-a4fe-152cd6cbd94b",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779625139000,
+        "summary": "Backyard Northwest began watering at 05:18 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "99291778-776b-3a4e-a9fc-145b0f142da1",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "DEVICE_STATUS",
+        "eventDate": 1779625137000,
+        "summary": "Soaked Backyard East Lawn for 11 minutes, completed at 05:18 AM (PDT).",
+        "subType": "ZONE_CYCLING_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "becd59a3-afed-3c2f-a7c3-8a7b2b6811e0",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779624493000,
+        "summary": "Soaking Backyard East Lawn for 11 minutes, started at 05:08 AM (PDT).",
+        "subType": "ZONE_CYCLING",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "5b2bbcf7-c40b-3cf0-b632-a56b9d852684",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779624492000,
+        "summary": "Backyard East Lawn completed watering at 05:08 AM (PDT) for 11 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "6b4bd9e1-b6f3-3ad7-a042-b1a4f1004062",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779623841000,
+        "summary": "Backyard South Wes... completed watering at 04:57 AM (PDT) for 6 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "ac4343b9-ccd2-3e45-8a52-5f5152974f18",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779623831000,
+        "summary": "Backyard East Lawn began watering at 04:57 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "1c3c1a84-b870-3d95-890c-de4cd68001c6",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779623486000,
+        "summary": "Backyard Middle We... completed watering at 04:51 AM (PDT) for 6 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "5133da01-cd1d-38e0-80de-4e0106d540d1",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779623476000,
+        "summary": "Backyard South Wes... began watering at 04:51 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "77c5886d-e66e-3abe-aa86-9d32fb775e1d",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779623114000,
+        "summary": "Backyard Northwest completed watering at 04:45 AM (PDT) for 7 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "5810abd9-3c72-3127-b279-e96831e96678",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779623103000,
+        "summary": "Backyard Middle We... began watering at 04:45 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "4f2e590b-26c7-3dc2-88dd-5408c6e857f0",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1779622884000,
+        "summary": "Lawn Sprinklers was not skipped because the PLUS weather network observed:\n0.00 in of predicted and 0.00 in observed precipitation\n4 mph winds\n50\u00b0F temp",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8"
+    },
+    {
+        "id": "11dcff08-8b8d-34ea-9b96-7b36b800b619",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779622687000,
+        "summary": "Backyard Northwest began watering at 04:38 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "3e3b1ee5-3fc1-3aa5-96e4-d741c60ab141",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779622686000,
+        "summary": "Lawn Sprinklers will run for 71 minutes.",
+        "subType": "SCHEDULE_STARTED",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "WATERING"
+    },
+    {
+        "id": "da7d0f15-22fb-3c8c-886b-deeadcd150c1",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779506780000,
+        "summary": "Bubblers ran for 8 minutes.",
+        "subType": "SCHEDULE_COMPLETED",
+        "hidden": false,
+        "scheduleId": "e5d592d2-06a3-4c10-9e9c-11a656e12650",
+        "topic": "WATERING"
+    },
+    {
+        "id": "719f3970-2b38-3c00-b77f-82ea9c6d5898",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779506779000,
+        "summary": "Backyard Bubblers completed watering at 08:26 PM (PDT) for 8 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "97acc3c8-d18c-3f53-9241-a04460f1a35f",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1779506487000,
+        "summary": "Bubblers was not skipped because the PLUS weather network observed:\n0.00 in of predicted and 0.00 in observed precipitation\n11 mph winds\n68\u00b0F temp",
+        "hidden": false,
+        "scheduleId": "e5d592d2-06a3-4c10-9e9c-11a656e12650"
+    },
+    {
+        "id": "cf73b138-07b6-3f6e-b524-8891c94fda40",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779506281000,
+        "summary": "Backyard Bubblers began watering at 08:18 PM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "d0169fa5-b569-3c6e-9578-9e6ee32a88af",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779506280000,
+        "summary": "Bubblers will run for 8 minutes.",
+        "subType": "SCHEDULE_STARTED",
+        "hidden": false,
+        "scheduleId": "e5d592d2-06a3-4c10-9e9c-11a656e12650",
+        "topic": "WATERING"
+    },
+    {
+        "id": "e24ab034-a2a6-33f0-bb9f-602e70b789c8",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779454201000,
+        "summary": "Backyard East Lawn completed watering at 05:50 AM (PDT) for 11 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "22ed616f-cd83-3fb1-8e62-0e2477e26dd3",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779454200000,
+        "summary": "Lawn Sprinklers ran for 71 minutes.",
+        "subType": "SCHEDULE_COMPLETED",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "WATERING"
+    },
+    {
+        "id": "b972729b-31e1-30f9-839e-8a367ed418c3",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779453551000,
+        "summary": "Backyard South Wes... completed watering at 05:39 AM (PDT) for 6 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "5a01840b-c854-388c-971a-48184d405616",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779453541000,
+        "summary": "Backyard East Lawn began watering at 05:39 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "9f3904ca-358b-3a7b-8019-30fe0cbe0df7",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779453196000,
+        "summary": "Backyard Middle We... completed watering at 05:33 AM (PDT) for 6 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "81a5f646-215e-3aef-9793-3dc919c3b2b2",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779453186000,
+        "summary": "Backyard South Wes... began watering at 05:33 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "8fb9cbc2-ba85-33ef-8d08-b6fe265d22a1",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779452824000,
+        "summary": "Backyard Northwest completed watering at 05:27 AM (PDT) for 7 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "1f2f93f8-8e72-36ac-8def-c49e25076f83",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779452815000,
+        "summary": "Backyard Middle We... began watering at 05:26 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "9005c206-2478-35ae-8405-baad199b838a",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779452398000,
+        "summary": "Backyard Northwest began watering at 05:19 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "eaa5deb3-e5c7-3340-b3b4-2918891f1795",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "DEVICE_STATUS",
+        "eventDate": 1779452397000,
+        "summary": "Soaked Backyard East Lawn for 11 minutes, completed at 05:19 AM (PDT).",
+        "subType": "ZONE_CYCLING_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "ff038846-9668-3f68-9763-fc338e6ad065",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779451752000,
+        "summary": "Soaking Backyard East Lawn for 11 minutes, started at 05:09 AM (PDT).",
+        "subType": "ZONE_CYCLING",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "3ca5a117-99fa-3d4f-99aa-18269667bf03",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779451751000,
+        "summary": "Backyard East Lawn completed watering at 05:09 AM (PDT) for 11 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "042c6764-29b4-3804-a8b9-f9efa501523c",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779451101000,
+        "summary": "Backyard South Wes... completed watering at 04:58 AM (PDT) for 6 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "41584637-5563-3c25-9b6d-62d649cccee0",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779451091000,
+        "summary": "Backyard East Lawn began watering at 04:58 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "ecdf2273-ebc1-308d-bc4c-8b8049d8d510",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779450746000,
+        "summary": "Backyard Middle We... completed watering at 04:52 AM (PDT) for 6 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "f0141b92-e2df-3a79-8ff7-f0ad8624d92a",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779450736000,
+        "summary": "Backyard South Wes... began watering at 04:52 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "501aea20-42d6-3d45-856b-90b7b557213c",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779450374000,
+        "summary": "Backyard Northwest completed watering at 04:46 AM (PDT) for 7 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "9b38ffb6-b660-39a6-9dab-05fb67d71c49",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779450363000,
+        "summary": "Backyard Middle We... began watering at 04:46 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "f6c4e7bc-28ce-3591-8ea6-b08389c7bb8d",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1779450094000,
+        "summary": "Lawn Sprinklers was not skipped because the PLUS weather network observed:\n0.00 in of predicted and 0.00 in observed precipitation\n3 mph winds\n54\u00b0F temp",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8"
+    },
+    {
+        "id": "e59d4b59-f5dc-36b1-9ecc-e1817949b8b8",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779449947000,
+        "summary": "Backyard Northwest began watering at 04:39 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "d6f0bac1-3dcf-3dab-a9d3-6f382a09ca13",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779449946000,
+        "summary": "Lawn Sprinklers will run for 71 minutes.",
+        "subType": "SCHEDULE_STARTED",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "WATERING"
+    },
+    {
+        "id": "ea9a8bd4-486b-3ee4-b82b-8d06a3fcd2d3",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779429040000,
+        "summary": "Front Yard ran for 154 minutes.",
+        "subType": "SCHEDULE_COMPLETED",
+        "hidden": false,
+        "scheduleId": "143ee9ea-88f8-48dd-b134-e9fae4e9005b",
+        "topic": "WATERING"
+    },
+    {
+        "id": "a337fbfc-e96b-32fc-a363-1629442efd80",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779429040000,
+        "summary": "Front Yard Tree completed watering at 10:50 PM (PDT) for 144 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "5bf92893-d3fe-39a1-893d-b46367dbe50f",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779420421000,
+        "summary": "Front Yard completed watering at 08:27 PM (PDT) for 10 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "f6577a4c-4714-3108-8327-bc1cb643513b",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779420411000,
+        "summary": "Front Yard Tree began watering at 08:26 PM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "17396089-fc81-3557-9684-9709e6a43ccc",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1779420084000,
+        "summary": "Front Yard was not skipped because the PLUS weather network observed:\n0.00 in of predicted and 0.00 in observed precipitation\n7 mph winds\n64\u00b0F temp",
+        "hidden": false,
+        "scheduleId": "143ee9ea-88f8-48dd-b134-e9fae4e9005b"
+    },
+    {
+        "id": "225f219d-fe76-3164-9ee1-428962425fbe",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779419821000,
+        "summary": "Front Yard began watering at 08:17 PM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "86566a8f-e83f-3933-ae7e-d8ee9d7546f6",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779419820000,
+        "summary": "Front Yard will run for 154 minutes.",
+        "subType": "SCHEDULE_STARTED",
+        "hidden": false,
+        "scheduleId": "143ee9ea-88f8-48dd-b134-e9fae4e9005b",
+        "topic": "WATERING"
+    },
+    {
+        "id": "75a18f7b-9d5e-3b0c-a9f7-cdeebe0462c6",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779349770000,
+        "summary": "Backyard Orchard completed watering at 12:49 AM (PDT) for 273 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "9b57bd83-d1ea-3116-b155-9d6b2dc19d60",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779349769000,
+        "summary": "Orchard ran for 273 minutes.",
+        "subType": "SCHEDULE_COMPLETED",
+        "hidden": false,
+        "scheduleId": "0dc08767-6cfd-45e9-b813-9d349786f8fc",
+        "topic": "WATERING"
+    },
+    {
+        "id": "c1a02b7f-5702-30b0-8229-a39566989205",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1779333409000,
+        "summary": "Orchard was not skipped because the PLUS weather network observed:\n0.00 in of predicted and 0.00 in observed precipitation\n63\u00b0F temp",
+        "hidden": false,
+        "scheduleId": "0dc08767-6cfd-45e9-b813-9d349786f8fc"
+    },
+    {
+        "id": "fbda7a5a-24e7-3716-959b-5badc7685431",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779333361000,
+        "summary": "Backyard Orchard began watering at 08:16 PM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "23dec6b5-b180-3738-aa19-8193566c36f3",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779333360000,
+        "summary": "Orchard will run for 273 minutes.",
+        "subType": "SCHEDULE_STARTED",
+        "hidden": false,
+        "scheduleId": "0dc08767-6cfd-45e9-b813-9d349786f8fc",
+        "topic": "WATERING"
+    },
+    {
+        "id": "7c5aa813-24e7-3dff-8146-f22522833825",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779247401000,
+        "summary": "Bubblers ran for 8 minutes.",
+        "subType": "SCHEDULE_COMPLETED",
+        "hidden": false,
+        "scheduleId": "e5d592d2-06a3-4c10-9e9c-11a656e12650",
+        "topic": "WATERING"
+    },
+    {
+        "id": "44f8f7b0-8ffd-3883-8ae8-64261df4e9b4",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779247399000,
+        "summary": "Backyard Bubblers completed watering at 08:23 PM (PDT) for 8 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "a306d6ce-c083-372c-a5ab-e0046c6d9006",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1779247049000,
+        "summary": "Bubblers was not skipped because the PLUS weather network observed:\n0.00 in of predicted and 0.00 in observed precipitation\n3 mph winds\n73\u00b0F temp",
+        "hidden": false,
+        "scheduleId": "e5d592d2-06a3-4c10-9e9c-11a656e12650"
+    },
+    {
+        "id": "1c1e9e1d-9683-35ea-a760-0c3b19f7038a",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779246901000,
+        "summary": "Backyard Bubblers began watering at 08:15 PM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "7d2ba8be-d893-3259-b711-8d43921e4635",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779246900000,
+        "summary": "Bubblers will run for 8 minutes.",
+        "subType": "SCHEDULE_STARTED",
+        "hidden": false,
+        "scheduleId": "e5d592d2-06a3-4c10-9e9c-11a656e12650",
+        "topic": "WATERING"
+    },
+    {
+        "id": "14f1e178-5c49-322a-bfb4-63e86bda0f94",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779195121000,
+        "summary": "Lawn Sprinklers ran for 71 minutes.",
+        "subType": "SCHEDULE_COMPLETED",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "WATERING"
+    },
+    {
+        "id": "42864f5c-3362-36ad-bdd3-1b9da42d8793",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779195121000,
+        "summary": "Backyard East Lawn completed watering at 05:52 AM (PDT) for 11 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "13f65017-fd45-311d-97c6-ef82d5df0b11",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779194471000,
+        "summary": "Backyard South Wes... completed watering at 05:41 AM (PDT) for 6 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "d5f960df-75b0-3894-af1a-9ff96bf2f66d",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779194461000,
+        "summary": "Backyard East Lawn began watering at 05:41 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "f7b72279-161e-36e1-a270-2ca12c71dddd",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779194116000,
+        "summary": "Backyard Middle We... completed watering at 05:35 AM (PDT) for 6 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "12461a52-7b30-3768-be4b-5d93e497a88c",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779194106000,
+        "summary": "Backyard South Wes... began watering at 05:35 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "054dac9a-5ba9-3618-9bb2-25ab9783ff88",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779193744000,
+        "summary": "Backyard Northwest completed watering at 05:29 AM (PDT) for 7 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "92d21491-4524-37da-8359-db38c701b34e",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779193735000,
+        "summary": "Backyard Middle We... began watering at 05:28 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "a0af77c9-4204-36f2-b10b-ea0750e35037",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779193318000,
+        "summary": "Backyard Northwest began watering at 05:21 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "7427f2f7-a102-38e7-ad62-e4e91d173e6d",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "DEVICE_STATUS",
+        "eventDate": 1779193317000,
+        "summary": "Soaked Backyard East Lawn for 11 minutes, completed at 05:21 AM (PDT).",
+        "subType": "ZONE_CYCLING_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "ec093533-87a9-3542-bfbd-af041483db7f",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779192672000,
+        "summary": "Soaking Backyard East Lawn for 11 minutes, started at 05:11 AM (PDT).",
+        "subType": "ZONE_CYCLING",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "ed2ace50-dd62-3722-a812-554993400f34",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779192671000,
+        "summary": "Backyard East Lawn completed watering at 05:11 AM (PDT) for 11 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "83369264-3c68-3706-a339-0ef93f52db84",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779192021000,
+        "summary": "Backyard South Wes... completed watering at 05:00 AM (PDT) for 6 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "fa33bab0-63e4-388d-9204-9f450392424c",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779192011000,
+        "summary": "Backyard East Lawn began watering at 05:00 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "ef5cd4c3-f440-388f-b28a-fc83972266bf",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779191666000,
+        "summary": "Backyard Middle We... completed watering at 04:54 AM (PDT) for 6 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "f9246256-a192-3274-83bf-06260b61b1a7",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779191656000,
+        "summary": "Backyard South Wes... began watering at 04:54 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "ec65e196-4c5f-39fe-83cb-4b1fefb2d480",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779191294000,
+        "summary": "Backyard Northwest completed watering at 04:48 AM (PDT) for 7 minutes.",
+        "subType": "ZONE_COMPLETED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "e03531c8-d392-375f-bf1d-142328d76394",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779191283000,
+        "summary": "Backyard Middle We... began watering at 04:48 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "5866efb2-d380-3f4d-b09e-a07bdb496d04",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "eventDate": 1779191195000,
+        "summary": "Lawn Sprinklers was not skipped because the PLUS weather network observed:\n0.00 in of predicted and 0.00 in observed precipitation\n8 mph winds\n55\u00b0F temp",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8"
+    },
+    {
+        "id": "5b04d670-3ff4-32a0-bcc0-44bfebe02a45",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "type": "ZONE_STATUS",
+        "eventDate": 1779190867000,
+        "summary": "Backyard Northwest began watering at 04:41 AM (PDT).",
+        "subType": "ZONE_STARTED",
+        "hidden": false,
+        "topic": "WATERING"
+    },
+    {
+        "id": "fb590868-5ba9-3c1f-894d-a1994f141f9e",
+        "deviceId": "62668f2f-4526-4d61-a3da-2e9e3d764584",
+        "category": "SCHEDULE",
+        "type": "SCHEDULE_STATUS",
+        "eventDate": 1779190866000,
+        "summary": "Lawn Sprinklers will run for 71 minutes.",
+        "subType": "SCHEDULE_STARTED",
+        "hidden": false,
+        "scheduleId": "f7e02fa5-b1fc-4514-9f64-d76ccdd520d8",
+        "topic": "WATERING"
+    }
+]
