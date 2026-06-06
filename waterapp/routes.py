@@ -29,7 +29,10 @@ def login():
     if request.method == "POST":
         if check_password(request.form.get("password", "")):
             session["logged_in"] = True
-            return redirect(request.args.get("next") or url_for("main.dashboard"))
+            # Always rebuild the target via url_for so it stays inside the
+            # /watermon2 mount. A raw `next` like "/" would resolve to the
+            # domain root (the WordPress site), not this app.
+            return redirect(url_for("main.dashboard"))
         error = "Incorrect password."
     return render_template("login.html", error=error)
 
