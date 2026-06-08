@@ -24,6 +24,11 @@ from config import AQUAHAWK_START_DATE, LOCAL_TIMEZONE, RACHIO_START_DATE
 
 LOCAL_TZ = ZoneInfo(LOCAL_TIMEZONE)
 
+# A stop timestamp shared by this many distinct zones is treated as a Rachio
+# "bulk-stop" connectivity artifact rather than a real run-end (see
+# load_rachio_df).
+_BULK_STOP_ZONE_THRESHOLD = 3
+
 
 # ── Downloading ───────────────────────────────────────────────────────────────
 
@@ -87,24 +92,32 @@ def load_rachio_df(start_date=None, end_date=None) -> pd.DataFrame:
 
     rows = []
     for zone, events in by_zone.items():
-        i = 0
-        while i < len(events) - 1:
-            s = events[i]
-            e = events[i + 1]
-            if s.subType == "ZONE_STARTED" and e.subType in (
-                "ZONE_STOPPED",
-                "ZONE_COMPLETED",
-            ):
-                t_start = s.pacific_date_time
-                t_end = e.pacific_date_time
+        # parse_rachio_events groups events by zone and sorts them
+        # chronologically within each zone, so this loop only ever sees one
+        # zone's events at a time — a ZONE_STARTED can only pair with a stop
+        # event from the SAME zone, never another zone's. We walk the sequence
+        # as a simple state machine, tracking the currently-open start:
+        #   STARTED  → opens (or, if one is already open, replaces) the run.
+        #              A second start with no intervening stop means the prior
+        #              run's stop event was lost; we drop that orphan start
+        #              rather than pairing it across the gap into a bogus run.
+        #   STOPPED/ → closes the open run and emits the interval. A stop with
+        #   COMPLETED  no open start is an orphan and is ignored.
+        pending_start = None
+        for ev in events:
+            if ev.subType == "ZONE_STARTED":
+                pending_start = ev
+            elif ev.subType in ("ZONE_STOPPED", "ZONE_COMPLETED"):
+                if pending_start is None:
+                    continue
+                t_start = pending_start.pacific_date_time
+                t_end = ev.pacific_date_time
                 minutes = (t_end - t_start).total_seconds() / 60.0
                 if minutes > 0:
                     rows.append(
                         {"Start": t_start, "End": t_end, "Zone": zone, "Minutes": minutes}
                     )
-                i += 2
-            else:
-                i += 1
+                pending_start = None
 
     if not rows:
         return pd.DataFrame(columns=["Start", "End", "Zone", "Minutes"])
@@ -115,6 +128,18 @@ def load_rachio_df(start_date=None, end_date=None) -> pd.DataFrame:
     df["Start"] = pd.to_datetime(df["Start"], utc=True).dt.tz_convert(LOCAL_TZ)
     df["End"] = pd.to_datetime(df["End"], utc=True).dt.tz_convert(LOCAL_TZ)
     df = df.sort_values("Start").reset_index(drop=True)
+
+    # Guard against Rachio "bulk-stop" artifacts. When the controller loses
+    # connectivity it can emit a synthetic ZONE_STOPPED for many zones at the
+    # exact same instant on reconnect (e.g. 2025-07-05, where 7 zones all
+    # "stopped" at 12:29:36). Those aren't real run-ends, so pairing a
+    # ZONE_STARTED with one yields an impossibly long interval (hours) that
+    # wrecks duration-based metrics like predicted GPM. A legitimate schedule
+    # runs zones sequentially with distinct stop times, so a stop timestamp
+    # shared by 3+ zones is treated as an artifact and its intervals dropped.
+    if not df.empty:
+        zones_per_stop = df.groupby("End")["Zone"].transform("nunique")
+        df = df[zones_per_stop < _BULK_STOP_ZONE_THRESHOLD].reset_index(drop=True)
 
     if start_date:
         start_dt = pd.Timestamp(start_date, tz=LOCAL_TZ)
@@ -149,8 +174,12 @@ def attribute_gallons(
     if not (pd.Timedelta(minutes=5) <= cadence <= pd.Timedelta(hours=4)):
         cadence = pd.Timedelta(hours=1)
 
+    # AquaHawk timestamps the END of each interval: a 2 AM reading reports the
+    # water consumed from 1–2 AM. So the bucket spans [Timestamp - cadence,
+    # Timestamp], not [Timestamp, Timestamp + cadence].
     aq = aq.copy()
-    aq["AqEnd"] = aq["Timestamp"] + cadence
+    aq["AqStart"] = aq["Timestamp"] - cadence
+    aq["AqEnd"] = aq["Timestamp"]
 
     rachio = rachio.copy()
     if tail_minutes > 0:
@@ -162,7 +191,7 @@ def attribute_gallons(
     gallons_by_event: dict[int, float] = defaultdict(float)
     i = j = 0
     while i < len(usage) and j < len(events):
-        u_start = usage.loc[i, "Timestamp"]
+        u_start = usage.loc[i, "AqStart"]
         u_end = usage.loc[i, "AqEnd"]
         g = usage.loc[i, "Gallons"]
         e_start = events.loc[j, "Start"]

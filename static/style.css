@@ -163,6 +163,12 @@ main { padding: 1.25rem 1.5rem; max-width: 1600px; margin: 0 auto; }
 .plotly-chart { height: 380px; }
 .full-width .plotly-chart { height: 340px; }
 
+.info-icon {
+  cursor: help;
+  opacity: 0.7;
+  font-size: 0.85em;
+}
+
 /* ── Misc ── */
 .error { color: var(--red); font-size: 0.875rem; }
 

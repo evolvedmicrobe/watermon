@@ -134,11 +134,18 @@ def chart_rachio_timeline(rachio: pd.DataFrame) -> str:
             )
         )
 
+    n_zones = len(zones)
+    # Give each zone a generous fixed slice of vertical space so bubbles never
+    # overlap on the y-axis, regardless of how many zones are present.
+    layout = {**_LAYOUT, "height": max(400, 90 * n_zones + 120)}
     fig.update_layout(
         title="Rachio Watering Events (bubble size ∝ duration)",
         xaxis_title="Date",
         yaxis_title="Zone",
-        **_LAYOUT,
+        # Pad above the top zone and below the bottom zone so edge bubbles
+        # aren't clipped by the plot border.
+        yaxis=dict(range=[-0.6, n_zones - 0.4]),
+        **layout,
     )
     return pio.to_json(fig)
 
@@ -231,11 +238,14 @@ def chart_gpm(attributed: pd.DataFrame) -> str:
             annotation_font_size=10,
         )
 
+    # Full-width, tall layout so individual events and the per-zone median
+    # reference lines are easy to distinguish.
+    layout = {**_LAYOUT, "height": 700}
     fig.update_layout(
         title="Gallons per Minute by Zone (efficiency over time)",
         xaxis_title="Date",
         yaxis_title="GPM",
-        **_LAYOUT,
+        **layout,
     )
     return pio.to_json(fig)
 
@@ -323,19 +333,24 @@ def chart_alignment(aq: pd.DataFrame, rachio: pd.DataFrame) -> str:
         # Also add scatter traces per zone so they show in legend
         for zone in sorted(zones):
             zdf = rachio[rachio["Zone"] == zone]
+            customdata = list(zip(
+                zdf["Minutes"].tolist(),
+                zdf["End"].dt.strftime("%H:%M").tolist(),
+            ))
             fig.add_trace(
                 go.Scatter(
                     x=zdf["Start"],
                     y=[0] * len(zdf),
                     mode="markers",
-                    marker=dict(color=cmap[zone], size=8, symbol="triangle-up"),
+                    marker=dict(color=cmap[zone], size=12, symbol="triangle-up"),
                     name=zone,
                     legendgroup=zone,
                     hovertemplate=(
-                        f"<b>{zone}</b><br>%{{x|%b %d %H:%M %Z}}<br>"
-                        "%{customdata:.1f} min<extra></extra>"
+                        f"<b>{zone}</b><br>"
+                        "Start %{x|%b %d %H:%M %Z} → End %{customdata[1]}<br>"
+                        "%{customdata[0]:.1f} min<extra></extra>"
                     ),
-                    customdata=zdf["Minutes"].values,
+                    customdata=customdata,
                 )
             )
             for _, row in zdf.iterrows():
@@ -355,12 +370,109 @@ def chart_alignment(aq: pd.DataFrame, rachio: pd.DataFrame) -> str:
                     )
                 )
 
+    layout = {**_LAYOUT, "height": 750}
     fig.update_layout(
         title="Timezone Alignment: AquaHawk usage vs Rachio events (same axis)",
         xaxis_title=f"Time ({aq['Timestamp'].iloc[0].tzname() if not aq.empty else 'Pacific'})",
         yaxis_title="Gallons / hr",
         shapes=shapes,
         barmode="overlay",
-        **_LAYOUT,
+        hovermode="closest",
+        **layout,
+    )
+    return pio.to_json(fig)
+
+
+# ── 7. Predicted vs actual consumption ───────────────────────────────────────
+
+def chart_predicted_vs_actual(attributed: pd.DataFrame) -> str:
+    """Scatter of predicted vs actually-attributed gallons, per event per zone.
+
+    For each zone we infer a characteristic flow rate (the median GPM across all
+    that zone's events), then predict each event's consumption as
+    ``median_GPM * Minutes``. Plotting that against the actually-attributed
+    gallons shows how consistent each zone's flow is: points hugging the dashed
+    y=x line behave as predicted, while scatter away from it reveals events that
+    used more or less water than the zone's typical rate would suggest.
+    """
+    if attributed.empty or "GallonsAttributed" not in attributed.columns:
+        fig = go.Figure()
+        fig.update_layout(title="Predicted vs Actual Usage (no data)", **_LAYOUT)
+        return pio.to_json(fig)
+
+    df = attributed[attributed["Minutes"] > 0].copy()
+    if df.empty:
+        fig = go.Figure()
+        fig.update_layout(title="Predicted vs Actual Usage (no data)", **_LAYOUT)
+        return pio.to_json(fig)
+
+    df["GPM"] = df["GallonsAttributed"] / df["Minutes"]
+    median_gpm = df.groupby("Zone")["GPM"].transform("median")
+    df["Predicted"] = median_gpm * df["Minutes"]
+
+    zones = sorted(df["Zone"].unique())
+    cmap = _zone_color_map(zones)
+
+    # One subplot per zone, arranged in a 2-column grid.
+    ncols = 2 if len(zones) > 1 else 1
+    nrows = -(-len(zones) // ncols)  # ceil division
+    fig = make_subplots(
+        rows=nrows,
+        cols=ncols,
+        subplot_titles=zones,
+        horizontal_spacing=0.1,
+        vertical_spacing=max(0.06, 0.18 / nrows),
+    )
+
+    for idx, zone in enumerate(zones):
+        row = idx // ncols + 1
+        col = idx % ncols + 1
+        zdf = df[df["Zone"] == zone]
+        customdata = list(zip(
+            zdf["Start"].dt.strftime("%b %d %Y %H:%M").tolist(),
+            zdf["Minutes"].tolist(),
+        ))
+        fig.add_trace(
+            go.Scatter(
+                x=zdf["Predicted"],
+                y=zdf["GallonsAttributed"],
+                mode="markers",
+                marker=dict(color=cmap[zone], size=8, opacity=0.75),
+                name=zone,
+                showlegend=False,
+                customdata=customdata,
+                hovertemplate=(
+                    f"<b>{zone}</b><br>%{{customdata[0]}}<br>"
+                    "%{customdata[1]:.1f} min<br>"
+                    "predicted %{x:.1f} gal · actual %{y:.1f} gal<extra></extra>"
+                ),
+            ),
+            row=row,
+            col=col,
+        )
+
+        # Dashed y=x reference for this zone: perfect prediction agreement.
+        hi = max(zdf["Predicted"].max(), zdf["GallonsAttributed"].max())
+        fig.add_trace(
+            go.Scatter(
+                x=[0, hi],
+                y=[0, hi],
+                mode="lines",
+                line=dict(color="#6c7086", dash="dash"),
+                showlegend=False,
+                hoverinfo="skip",
+            ),
+            row=row,
+            col=col,
+        )
+
+    fig.update_xaxes(title_text="Predicted gallons")
+    fig.update_yaxes(title_text="Actual gallons")
+
+    layout = {**_LAYOUT, "height": max(420, 360 * nrows)}
+    fig.update_layout(
+        title="Predicted vs Actual Water Usage by Zone (based on inferred GPM)",
+        hovermode="closest",
+        **layout,
     )
     return pio.to_json(fig)

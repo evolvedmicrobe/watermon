@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- City of Davis penny-farthing (high-wheel bicycle) -->
+  <rect width="64" height="64" rx="12" fill="#1b6b3a"/>
+  <g fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- large front wheel -->
+    <circle cx="24" cy="33" r="19"/>
+    <!-- spokes -->
+    <line x1="24" y1="14" x2="24" y2="52"/>
+    <line x1="5"  y1="33" x2="43" y2="33"/>
+    <line x1="10.6" y1="19.6" x2="37.4" y2="46.4"/>
+    <line x1="37.4" y1="19.6" x2="10.6" y2="46.4"/>
+    <circle cx="24" cy="33" r="2.6" fill="#ffffff"/>
+    <!-- small rear wheel -->
+    <circle cx="53" cy="46" r="8"/>
+    <circle cx="53" cy="46" r="1.6" fill="#ffffff"/>
+    <!-- frame -->
+    <line x1="24" y1="33" x2="53" y2="46"/>
+    <line x1="24" y1="33" x2="40" y2="16"/>
+    <!-- handlebar / seat post -->
+    <line x1="40" y1="16" x2="46" y2="16"/>
+    <line x1="40" y1="16" x2="36" y2="22"/>
+    <!-- seat -->
+    <line x1="37" y1="20" x2="44" y2="22"/>
+  </g>
+</svg>

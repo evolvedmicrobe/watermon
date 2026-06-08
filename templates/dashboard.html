@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Water Monitor</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
   <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -23,7 +24,7 @@
     <form method="get" class="filter-form">
       <label>From <input type="date" name="start" value="{{ start }}"></label>
       <label>To   <input type="date" name="end"   value="{{ end }}"></label>
-      <label>Tail (min) <input type="number" name="tail" value="{{ tail }}" min="0" max="120" step="5" style="width:70px"></label>
+      <label title="Extra minutes added to the end of each Rachio watering event when matching it to AquaHawk meter readings. The water meter reports on a delay, so gallons can keep registering after a zone turns off; the tail captures that trailing usage. Larger values attribute more late-arriving gallons to each event (0 = no extension).">Tail (min) <span class="info-icon" aria-hidden="true">ⓘ</span> <input type="number" name="tail" value="{{ tail }}" min="0" max="120" step="5" style="width:70px"></label>
       <button type="submit">Apply</button>
     </form>
 
@@ -63,8 +64,12 @@
       <div id="chart-zone-totals" class="plotly-chart"></div>
     </div>
 
-    <div class="chart-card half-width">
+    <div class="chart-card full-width">
       <div id="chart-gpm" class="plotly-chart"></div>
+    </div>
+
+    <div class="chart-card full-width">
+      <div id="chart-predicted-vs-actual" class="plotly-chart"></div>
     </div>
 
   </section>
@@ -80,11 +85,17 @@
     "chart-timeline":       {{ charts.timeline       | safe }},
     "chart-zone-totals":    {{ charts.zone_totals    | safe }},
     "chart-gpm":            {{ charts.gpm            | safe }},
+    "chart-predicted-vs-actual": {{ charts.predicted_vs_actual | safe }},
   };
 
   const config = { responsive: true, displayModeBar: true, scrollZoom: true };
 
   for (const [id, spec] of Object.entries(chartData)) {
+    // A chart may request a taller container via its layout height (e.g. the
+    // timeline scales with the number of zones); honor it over the CSS default.
+    if (spec.layout && spec.layout.height) {
+      document.getElementById(id).style.height = spec.layout.height + "px";
+    }
     Plotly.react(id, spec.data, spec.layout, config);
   }
 

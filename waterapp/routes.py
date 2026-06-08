@@ -67,6 +67,7 @@ def dashboard():
         "timeline": charts.chart_rachio_timeline(rachio),
         "zone_totals": charts.chart_zone_totals(attributed),
         "gpm": charts.chart_gpm(attributed),
+        "predicted_vs_actual": charts.chart_predicted_vs_actual(attributed),
         "alignment": charts.chart_alignment(aq, rachio),
     }
 
